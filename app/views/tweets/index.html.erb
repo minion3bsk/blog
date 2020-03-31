@@ -1,0 +1,14 @@
+
+  <body>
+    <% @comments.each do |comment| %>
+     <div class="box5">
+        <div class="comment_name">
+          <p><%= comment.user.username %></p>
+        </div>
+        <div class="comment_text">
+          <p><%= comment.text %></p>
+        </div>
+     </div>
+    <% end %>
+    <%= paginate @comments %>
+  </body>  

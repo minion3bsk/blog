@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="tweets.scss"> 
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="tweets.scss">  
+  </head>
+  <body>
+    <div class="main">
+        <div class="box5">  
+         <div class="comment_name">
+            <p><%= comment.user.username %>さん</p>
+         </div>
+         <div class="comment_text">
+            <p><%= comment.params[:text] %></p>
+         </div>
+        </div>
+    </div>    
+  </body>
+</html>

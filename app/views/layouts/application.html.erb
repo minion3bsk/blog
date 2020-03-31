@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="header">
+      <title>Blog</title>
+      <h1>Blog</h1>
+      <div class="tweets_new">
+        <% if user_signed_in? %>
+          <%= current_user.username %>さんこんにちは！
+          <%= link_to '投稿', 'tweets/new'%>
+          <%= link_to 'ログアウト','users/sign_out'%>
+        <% else %>
+          <%= link_to '新規登録', 'users/sign_up' %>
+          <%= link_to 'ログイン','users/sign_in' %>
+        <% end %>  
+      </div>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
